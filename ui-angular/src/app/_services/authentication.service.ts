@@ -11,7 +11,7 @@ export class AuthenticationService {
     //login(email: string, password: string) {
         //return this.http.post<any>('/api/auth/authenticate', { email: email, password: password })
 		login(userData: User) {
-		return this.http.post<any>('https://gateway20190603104549.azurewebsites.net/api/auth/authenticate', userData)
+		return this.http.post<any>('/api/auth/authenticate', userData)
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.access_token) {
