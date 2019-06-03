@@ -12,18 +12,18 @@ export class UserService {
     // }
 
     getById(id?: string) {
-        return this.http.get(`/api/users/` + id);
+        return this.http.get(`https://gateway20190603104549.azurewebsites.net/api/users/` + id);
     }
 
     register(user: User) {
-        return this.http.post(`/api/auth/register`, user);
+        return this.http.post(`https://gateway20190603104549.azurewebsites.net/api/auth/register`, user);
     }
 
     update(user: User) {
-        return this.http.put(`/api/auth/` + user.userid, user);
+        return this.http.put(`https://gateway20190603104549.azurewebsites.net/api/auth/` + user.userid, user);
     }
 
     delete(id?: string) {
-        return this.http.delete(`/api/auth/` + id);
+        return this.http.delete(`https://gateway20190603104549.azurewebsites.net/api/auth/` + id);
     }
 }

@@ -8,7 +8,7 @@ export class AdsService {
 	
 	page: number;
 	size: number;
-    private url = "/api/ads";
+    private url = "https://gateway20190603104549.azurewebsites.net/api/ads";
  
     constructor(private http: HttpClient, private route: ActivatedRoute) {		
 	this.route.queryParams.subscribe(params => {
