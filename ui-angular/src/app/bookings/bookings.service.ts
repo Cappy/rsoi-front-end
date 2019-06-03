@@ -8,7 +8,7 @@ export class BookingsService {
 	
 	page: number;
 	size: number;
-    private url = "https://gateway20190603104549.azurewebsites.net/api/bookings";
+    private url = "https://gateway20190603104549.azurewebsites.net";
  
     constructor(private http: HttpClient, private route: ActivatedRoute) {		
 	this.route.queryParams.subscribe(params => {
@@ -18,23 +18,23 @@ export class BookingsService {
     }
 	
 	getAllBookings() {
-        return this.http.get(this.url);
+        return this.http.get(this.url + '/api/bookings');
     }
 	
 	getBooking(id: string) {
-        return this.http.get('/api/booking-with-info' + '/' + id);
+        return this.http.get(this.url + '/api/booking-with-info' + '/' + id);
     }
  
     getBookings(page: number, size: number) {
-        return this.http.get('/api/bookings-with-info' + '?page=' + page + '&size=' + size);
+        return this.http.get(this.url + '/api/bookings-with-info' + '?page=' + page + '&size=' + size);
     }
 	
 	getBookingsOfUser(page: number, size: number, userid: string) {
-        return this.http.get('/api/bookings-with-info-of-user' + '?page=' + page + '&size=' + size + '&userid=' + userid);
+        return this.http.get(this.url + '/api/bookings-with-info-of-user' + '?page=' + page + '&size=' + size + '&userid=' + userid);
     }
  
     createBooking(booking: Booking) {
-		return this.http.post(this.url, booking, { observe: 'response' });
+		return this.http.post(this.url + '/api/bookings', booking, { observe: 'response' });
     }
     updateBooking(booking: Booking) {
   
