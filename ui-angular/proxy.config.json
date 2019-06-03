@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+        "target": "https://gateway20190603104549.azurewebsites.net/",
+        "secure": false,
+        "logLevel": "debug",
+		"changeOrigin": true
+    }
+}
