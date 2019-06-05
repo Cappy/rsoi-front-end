@@ -23,7 +23,7 @@
     </div>
 	<div class="form-group">
         <label for="dateOfBirth">Date Of Birth</label>
-        <input type="date" formControlName="dateOfBirth" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }" />
+        <input type="date" formControlName="dateOfBirth" min="1900-01-01" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }" />
         <div *ngIf="submitted && f.dateOfBirth.errors" class="invalid-feedback">
             <div *ngIf="f.dateOfBirth.errors.required">Date Of Birth is required</div>
         </div>
