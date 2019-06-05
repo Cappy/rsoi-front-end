@@ -375,14 +375,14 @@
 	<input type="hidden" formControlName="bookedPrice" [ngModel]="ad?.price">
 	<div class="form-group">
         <label for="arrivalDate">Arrival Date</label>
-        <input type="date" formControlName="arrivalDate" required min="{{today}} class="form-control" [ngClass]="{ 'is-invalid': submitted && f.arrivalDate.errors }" />
+        <input type="date" formControlName="arrivalDate" required min="{{today}}" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.arrivalDate.errors }" />
         <div *ngIf="submitted && f.arrivalDate.errors" class="invalid-feedback">
             <div *ngIf="f.arrivalDate.errors.required">Arrival Date is required</div>
         </div>
     </div>
 	<div class="form-group">
         <label for="arrivalDate">Departure Date</label>
-        <input type="date" formControlName="departureDate" required min="{{today}} class="form-control" [ngClass]="{ 'is-invalid': submitted && f.departureDate.errors }" />
+        <input type="date" formControlName="departureDate" required min="{{today}}" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.departureDate.errors }" />
         <div *ngIf="submitted && f.departureDate.errors" class="invalid-feedback">
             <div *ngIf="f.departureDate.errors.required">Departure Date is required</div>
         </div>
