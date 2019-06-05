@@ -13,6 +13,7 @@ import { SwalComponent } from '@toverux/ngx-sweetalert2';
 import { SwalPartialTargets } from '@toverux/ngx-sweetalert2';
 
 import { User } from '../_models';
+import { AlertService } from '../_services';
 import { BookingsService } from '../bookings/bookings.service';
 
 @Component({
@@ -51,7 +52,7 @@ export class AdsComponent implements OnInit {
   
   constructor(private adsService: AdsService,
   private bookingsService: BookingsService,
-  private route: ActivatedRoute, private router: Router,
+  private route: ActivatedRoute, private alertService: AlertService, private router: Router,
   private formBuilder: FormBuilder, public readonly swalTargets: SwalPartialTargets)  
   {
 	this.route.queryParams.subscribe(params => {
@@ -104,7 +105,7 @@ export class AdsComponent implements OnInit {
                 },
                 (err: any) => {
 					this.loading = false;
-					this.ads.push(this.ad);
+					this.alertService.error(err.error.err);
 					//this.f.arrivalDate = null;
 					//this.f.departureDate = null;
                     this.errorMsg = "Error: " + err.error.err;

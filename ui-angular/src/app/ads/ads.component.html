@@ -159,7 +159,7 @@
 		<div class="col-md-3">
         <input type="text" name="beds" [(ngModel)]="ad.beds" class="form-control" #beds="ngModel" required pattern="[0-9]+"/>
 		<br>
-			<div [hidden]="bedrooms.valid || bedrooms.untouched" class="alert alert-danger">
+			<div [hidden]="beds.valid || beds.untouched" class="alert alert-danger">
                Number of beds is not specified or is incorrect.
             </div>
 		</div>
@@ -368,6 +368,12 @@
         <p><b>Description:</b>		{{ad.description}}</p>
 	</div>
 	</div>
+	<div class="col-xs-12">
+        <p><b>Booked dates:</b></p> <div *ngFor="let bk of bookings | orderBy: 'departureDate'"> {{bk?.arrivalDate | date}} - {{bk?.departureDate | date}} </div>
+		<ng-template [ngIf]="bookingsUndefined">
+		<div>No bookings found for this Ad. You can be the first!</div>
+		</ng-template>
+	</div>
 	<br><br><h2>Choose dates</h2>
 	<form [formGroup]="bookingF" (ngSubmit)="onSubmit()">
 	<input type="hidden" formControlName="adid" [ngModel]="ad.adid">
@@ -471,6 +477,7 @@
 		<div>No bookings found for this Ad. You can be the first!</div>
 		</ng-template>
 	</div>
+	</div>
 	<div class="row">	
 	<div class="col-xs-6">
 		<a class="btn btn-default" (click)="cancel()" role="button"><span class="glyphicon glyphicon-chevron-left"></span> Return to list</a>
@@ -479,5 +486,5 @@
         <a class="btn btn-default" (click)="bookingForm()" role="button"><span class="glyphicon glyphicon-book"></span> Make booking</a>
 	</div>
 	</div>		
-</div>
+</div>		
  
