@@ -82,11 +82,13 @@
 <swal
 	#errorSwal
 	title = "Error"
+	text = "{{errorMsg}}"
 	type="error">
+</swal>
+
 <ng-container *swalPartial="swalTargets">
 <div style="display: table; margin: 0 auto;">{{errorMsg}}</div>
 </ng-container>	
-</swal>
 
 <!--шаблон для добавления-->
 <div *ngIf="createMode;">
