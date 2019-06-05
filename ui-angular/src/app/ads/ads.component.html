@@ -84,7 +84,7 @@
 	title = "Error"
 	text = "{{errorMsg}}"
 	type="error">
-<ng-container>
+<ng-container *swalPartial="swalTargets.content">
 <div style="display: table; margin: 0 auto;">{{errorMsg}}</div>
 </ng-container>	
 </swal>
