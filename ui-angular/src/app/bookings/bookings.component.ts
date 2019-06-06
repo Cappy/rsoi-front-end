@@ -98,24 +98,24 @@ ngOnInit() {
 	}
 	
     // сохранение данных
-    save() {
-        if (this.booking.bookingid == null) {
+    // save() {
+        // if (this.booking.bookingid == null) {
 			
-			this.bookingsService.createBooking(this.booking)
-                .subscribe((data: HttpResponse<Booking>) => {
-                    console.log(data);
-					this.loadBookings();
+			// this.bookingsService.createBooking(this.booking)
+                // .subscribe((data: HttpResponse<Booking>) => {
+                    // console.log(data);
+					// this.loadBookings();
 
-                });
+                // });
 
-        } else {
-            this.bookingsService.updateBooking(this.booking)
-                .subscribe(data => this.loadBookings());
-        }
-		this.bookinginfo = false;
-		this.cancel();
-		this.saveSwal.show();
-	}
+        // } else {
+            // this.bookingsService.updateBooking(this.booking)
+                // .subscribe(data => this.loadBookings());
+        // }
+		// this.bookinginfo = false;
+		// this.cancel();
+		// this.saveSwal.show();
+	// }
 	
     cancel() {
 		console.log(this.bookings);
