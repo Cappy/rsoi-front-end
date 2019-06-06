@@ -103,13 +103,12 @@ export class AdsComponent implements OnInit {
 					this.saveSwal.show();
                     this.router.navigate(['/ads']);
                 },
-                (err: Error) => {
+                (err: any) => {
 					this.loading = false;
-					console.log(err.err);
-					//this.alertService.error(err.error.err);
+					this.alertService.error(err.error.err);
 					//this.f.arrivalDate = null;
 					//this.f.departureDate = null;
-                    this.errorMsg = "Error: " + err.err;
+                    this.errorMsg = "Error: " + err.error.err;
 					this.errorSwal.show();
                 });
 	}
