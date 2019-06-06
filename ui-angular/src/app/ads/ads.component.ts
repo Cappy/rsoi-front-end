@@ -105,11 +105,11 @@ export class AdsComponent implements OnInit {
                 },
                 (err: Error) => {
 					this.loading = false;
-					console.log(err.error.err);
+					console.log(err.err);
 					//this.alertService.error(err.error.err);
 					//this.f.arrivalDate = null;
 					//this.f.departureDate = null;
-                    this.errorMsg = "Error: " + err.error.err;
+                    this.errorMsg = "Error: " + err.err;
 					this.errorSwal.show();
                 });
 	}
