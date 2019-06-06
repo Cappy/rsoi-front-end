@@ -12,7 +12,7 @@ import swal,{ SweetAlertOptions } from 'sweetalert2';
 import { SwalComponent } from '@toverux/ngx-sweetalert2';
 import { SwalPartialTargets } from '@toverux/ngx-sweetalert2';
 
-import { User } from '../_models';
+import { User, Error } from '../_models';
 import { AlertService } from '../_services';
 import { BookingsService } from '../bookings/bookings.service';
 
@@ -103,7 +103,7 @@ export class AdsComponent implements OnInit {
 					this.saveSwal.show();
                     this.router.navigate(['/ads']);
                 },
-                (err: any) => {
+                (err: Error) => {
 					this.loading = false;
 					console.log(err.error.err);
 					//this.alertService.error(err.error.err);
