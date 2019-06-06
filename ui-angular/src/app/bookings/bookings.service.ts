@@ -34,7 +34,7 @@ export class BookingsService {
     }
  
     createBooking(booking: Booking) {
-		return this.http.post(this.url + '/api/bookings', booking, { observe: 'response', responseType: 'text' });
+		return this.http.post(this.url + '/api/bookings', booking);
     }
     updateBooking(booking: Booking) {
   
