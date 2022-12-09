@@ -26,7 +26,7 @@
     "@toverux/ngx-sweetalert2": "^4.0.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "jquery": "^3.3.1",
     "ngx-bootstrap": "^3.1.1",
     "ngx-order-pipe": "^2.0.2",
